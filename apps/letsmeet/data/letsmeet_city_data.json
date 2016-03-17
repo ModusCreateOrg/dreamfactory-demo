@@ -1,0 +1,32 @@
+[
+    {
+        "id" : 1,
+        "name": "San Diego",
+        "state": "CA",
+        "country": "USA"
+    },
+    {
+        "id": 2,
+        "name": "Atlanta",
+        "state": "GA",
+        "country": "USA"
+    },
+    {
+        "id": 3,
+        "name": "Brooklyn",
+        "state": "NY",
+        "country": "USA"
+    },
+    {
+        "id": 4,
+        "name": "Washington",
+        "state": "DC",
+        "country": "USA"
+    },
+    {
+        "id": 5,
+        "name": "San Jose",
+        "state": "CA",
+        "country": "USA"
+    }
+]

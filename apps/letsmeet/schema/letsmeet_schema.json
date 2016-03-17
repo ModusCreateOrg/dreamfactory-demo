@@ -1,0 +1,155 @@
+{
+    "resource": [
+        {
+            "name": "city",
+            "label": "City",
+            "plural": "Cities",
+            "field": [
+                {
+                    "name": "id",
+                    "type": "id",
+                    "label": "ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "label": "Name",
+                    "allow_null": false
+                },
+                {
+                    "name": "state",
+                    "type": "string",
+                    "label": "State",
+                    "allow_null": true
+                },
+                {
+                    "name": "country",
+                    "type": "string",
+                    "label": "Country",
+                    "allow_null": false
+                }
+            ]
+        },
+        {
+            "name": "activity",
+            "label": "Activity",
+            "plural": "Activities",
+            "field": [
+                {
+                    "name": "id",
+                    "type": "id",
+                    "label": "ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "label": "Name",
+                    "allow_null": false
+                }
+            ]
+        },
+        {
+            "name": "attendeeresponse",
+            "label": "Attendee Response",
+            "plural": "Attendee Responses",
+            "field": [
+                {
+                    "name": "id",
+                    "type": "id",
+                    "label": "ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "text",
+                    "type": "string",
+                    "label": "Text",
+                    "allow_null": false
+                }
+            ]
+        },
+        {
+            "name": "meet",
+            "label": "Meet",
+            "plural": "Meets",
+            "field": [
+                {
+                    "name": "id",
+                    "type": "id",
+                    "label": "ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "creatorid",
+                    "type": "integer",
+                    "label": "Creator ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "label": "Description",
+                    "allow_null": false
+                },
+                {
+                    "name": "starttime",
+                    "type": "timestamp",
+                    "label": "Start Time",
+                    "allow_null": false
+                },
+                {
+                    "name": "locationid",
+                    "type": "string",
+                    "label": "Location ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "activityid",
+                    "type": "reference",
+                    "label": "Activity ID",
+                    "allow_null": false,
+                    "ref_table": "activity",
+                    "ref_fields": "id"
+                },
+                {
+                    "name": "cityid",
+                    "type": "reference",
+                    "label": "City ID",
+                    "allow_null": false,
+                    "ref_table": "city",
+                    "ref_fields": "id"
+                }
+            ]
+        },
+        {
+            "name": "meetattendee",
+            "label": "Meet Attendee",
+            "plural": "Meet Attendees",
+            "field": [
+                {
+                    "name": "meetid",
+                    "type": "reference",
+                    "label": "Meet ID",
+                    "allow_null": false,
+                    "ref_table": "meet",
+                    "ref_fields": "id"
+                },
+                {
+                    "name": "attendeeid",
+                    "type": "integer",
+                    "label": "Attendee ID",
+                    "allow_null": false
+                },
+                {
+                    "name": "attendeeresponseid",
+                    "type": "reference",
+                    "label": "Attendee Response ID",
+                    "ref_table": "attendeeresponse",
+                    "ref_fields": "id",
+                    "allow_null": false
+                }
+            ]
+        }
+    ]
+}
